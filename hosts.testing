@@ -1,0 +1,5 @@
+localhost ansible_connection=local
+
+[web]
+web01.test.example.com
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Do nothing if branch didn't change 
+test "$3" = "1" || exit 0
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+ln -sf hosts.$current_branch hosts \
+&& echo "Link: hosts -> hosts.$current_branch" \
+|| echo "Failed to create link hosts -> hosts.$current_branch"
+
